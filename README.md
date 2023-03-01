@@ -1,4 +1,4 @@
-#CLAR
+# CLAR
 
 
 This is the PyTorch source code for the CLAR paper. 
