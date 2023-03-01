@@ -1,63 +1,94 @@
-# WiTeacher
+#CLAR
 
-This is the PyTorch source code for the WiTeacher paper. The code runs on Python 3. Install the dependencies and prepare the datasets with the following commands:
 
-WiTeacher aims at boosting activity recognition on cross-domain scenarios based on  WiFi.
+This is the PyTorch source code for the CLAR paper. 
+The code runs on Python 3. 
+Install the dependencies and prepare the datasets with the following commands:
 
-## Dataset
 
-The two public datasets used in the paper are shown below.
+CLAR use a diffusion model-based Contrastive self-supervised Learning framework for Activity Recognition using WiFi CSI.
 
-### DeepSeg Dataset
+
+##Dataset
+
+
+The two public datasets used in the paper are shown below.\
+
+
+###DeepSeg Dataset
+
 
 The data that we extract from raw CSI data for our experiments can be downloaded from Baidu Netdisk or Google Drive:
 
-Data of CSI amplitudes: Data_CsiAmplitudeCut
-Baidu Netdisk: https://pan.baidu.com/s/12DwlT58PzlVAyBc-lYx1lw (Password: k8yp)
-Google Drive: https://drive.google.com/drive/folders/1PLzV6ZWAauMQLf08NUkd5UeKrqyGMHgv
 
-Manually marked Labels for CSI amplitude data: Label_CsiAmplitudeCut
-Baidu: https://pan.baidu.com/s/1nY5Og4NlLb7VH5oBQ-LH9w (Password: xnra)
-Google: https://drive.google.com/drive/folders/1855zX-93QjmAt2wSeJk0rTJRiPaFMGBd
-(1	boxing; 2	hand swing; 3	picking up; 4	hand raising; 5	running; 6	pushing; 7	squatting; 8	drawing O; 9	walking; 10 drawing X)
+Data of CSI amplitudes: Data_CsiAmplitudeCut Baidu Netdisk: https://pan.baidu.com/s/12DwlT58PzlVAyBc-lYx1lw (Password: k8yp) Google Drive: https://drive.google.com/drive/folders/1PLzV6ZWAauMQLf08NUkd5UeKrqyGMHgv
 
-Also the raw CSI data we collected can be downloaded via Baidu or Google: Data_RawCSIDat. Note that there is no need to download the raw CSI data for running our experiments. 
-Downloading Data_CsiAmplitudeCut and Label_CsiAmplitudeCut is enough for our experiments.
-Baidu: https://pan.baidu.com/s/1FpA2u_fzFIh4FuNIcWOPdQ (Password: hhcv)
-Google: https://drive.google.com/drive/folders/1vUeJYChsDgBzv7bJbiKDEfAHQje3SW9G
 
-### SignFi Dataset
+Manually marked Labels for CSI amplitude data: Label_CsiAmplitudeCut Baidu: https://pan.baidu.com/s/1nY5Og4NlLb7VH5oBQ-LH9w (Password: xnra) Google: https://drive.google.com/drive/folders/1855zX-93QjmAt2wSeJk0rTJRiPaFMGBd (1 boxing; 2 hand swing; 3 picking up; 4 hand raising; 5 running; 6 pushing; 7 squatting; 8 drawing O; 9 walking; 10 drawing X)
 
-The SignFi dataset comes from the link below:
-https://github.com/yongsen/SignFi
 
-## Requirement
 
-Python3.7
+Also the raw CSI data we collected can be downloaded via Baidu or Google: Data_RawCSIDat. Note that there is no need to download the raw CSI data for running our experiments. Downloading Data_CsiAmplitudeCut and Label_CsiAmplitudeCut is enough for our experiments. Baidu: https://pan.baidu.com/s/1FpA2u_fzFIh4FuNIcWOPdQ (Password: hhcv) Google: https://drive.google.com/drive/folders/1vUeJYChsDgBzv7bJbiKDEfAHQje3SW9G
 
-Pytorch 1.8.0
 
-The codes are tested under window7 and it should be ok for Ubuntu.
 
-## Folder descriptions:
 
-*01Data_PreProcess:* This is used to extract the data in CSI format from the original WiFi and convert it into PNG format in order to make better use of the data.
+###SignFi Dataset
 
-*02Training_Generator:* This is used to train the generator G1 and G2 which are proposed in the article so as to generate target-like samples based on the source data by StyleGAN.
+The SignFi dataset comes from the link below: https://github.com/yongsen/SignFi
 
-*03Activity_Recognition:* Based on the semi-supervised classification framework: Mean Teacher,  the label smoothing-based classification loss and the sample relation-based
-consistency regularization term are added to significantly improve the performance of activity recognition.
 
-## Motivation for WiTeacher
+##Requirement
 
-Despite of significant success on cross-domain activity recognition, the few-shot learning-based and data augmentation-based approaches still exist some shortages. First, few-shot learning-based methods still need a few labeled samples from the terminal users. 
-But collecting a few labeled samples is still difficult, especially for old terminal users. Second, data augmentation-based methods generally consider all the generated data to possess the same quality. However, GANs are typically unstable and prone to failure, and correspondingly generated
-samples may exhibit various levels of quality, i.e., some may be like real samples and others may be quite noised. Third, existing methods only consider each sample separately during model training, and ignore the relationships between samples, which can be explored to enhance model robustness.
+Python 3.7
 
-To address these issues, we present a Mean Teacher-based cross-domain activity recognition framework using WiFi CSI, WiTeacher.
+Tensorflow 2.4.1
 
-## WiTeacher Overview
+The codes are tested under window10.
 
-In this framework, we designed a adaptive label smoothing method to produce proper soft labels for target-like samples generated by StyleGAN. Based on these
-target-like samples with soft labels, we built a label smoothing-based classification loss to promote the generalization capacity of the model. Further, we presented a sample relation-based
-consistency regularization term to force the distance of two samples to be consistent with the augmented ones, which can make the model more robust.
+
+##Folder descriptions:
+
+01Data_PreProcess: This is used to extract the data in CSI format from the original WiFi and convert it into PNG format in order to make better use of the data.
+
+
+02DataGenerator: This is used to generate augmented samples based on the source data  through the augmentation method proposed in this paper.
+
+
+03ActivityRecognition: Based on the self-supervised learning framework: SimCLR, DDPM-based time series-specific augmentation method and the adaptive weight algorithm are added to significantly improve the performance of activity recognition.
+
+
+##Motivation for CLAR
+
+
+
+While most of the models are typically powered by supervised machine learning algorithms, where a large training dataset with annotations is needed to maintain an acceptable performance, makes the training phase time consuming, labor intensive, and expensive.
+Consequently, collecting numerous labeled data is one of the major hurdles in applying these methods for practical applications. Contrastive learning, in which models learn to extract representations by contrasting positive pairs (samples which are deemed to be similar) against negative pairs, has shown superior performance in the image processing and natural language processing.
+However, directly applying contrastive learning to activity recognition tasks is confronted with two additional issues.
+First, general data augmentation operations in contrastive learning might be ineffective for CSI data.
+Prevailing augmentation approach, such as Gaussian blur and color distortion, are particularly designed for image data, which can hardly change the shape of the CSI waveform, a kind of time series data.
+Second, typical contrastive learning models fail to consider the difference of the sample importance during model training. 
+In contrastive learning, the same weights are generally assigned to all the positive sample pairs for model training.
+However, for CSI-based activity recognition, different positive sample pairs might provide various clues for learning data representation. 
+
+
+
+To address these issues, we propose a diffusion model-based Contrastive self-supervised Learning framework for human Activity Recognition (CLAR) using WiFi CSI.
+
+
+
+
+
+
+##CLAR Overview
+
+In this framework, we designed a DDPM-based time series-specific augmentation method, which can combine two samples from users with different motion habits to generate augmented samples with compromised characteristics for amplifying training data and enhancing generalization capacity.
+Also, we presented an adaptive weight algorithm, which can adaptively adjust the weights of positive sample pairs for learning better data representations.
+
+
+
+
+
+
+
+
