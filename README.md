@@ -95,7 +95,7 @@ consistency regularization term to force the distance of two
 samples to be consistent with the augmented ones, which can
 make the model more robust.
 
-![Figure](https://github.com/ChunjingXiao/blob/master/WiTeacher/FigWiTeacherFramework.jpg)
+![Figure](https://github.com/ChunjingXiao/WiTeacher/blob/master/FigWiTeacherFramework.jpg)
 <p align="center">Figure 1. WiTeacher Framework. </p>
 
 Figure 1 presents an illustration of how the proposed framework works. 
