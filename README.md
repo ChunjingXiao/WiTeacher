@@ -5,18 +5,12 @@ These are the code and data for the paper: [Mean Teacher-based Cross-Domain Acti
 WiTeacher aims at recognizing activities for cross-domain scenarios using WiFi Channel State Information (CSI).
 
 # Citation
-@ARTICLE{WiTeacher2023,
-
-&nbsp; &nbsp; author={Xiao, Chunjing and Lei, Yue and Liu, Chun and Wu, Jie},
-
-&nbsp; &nbsp; journal={IEEE Internet of Things Journal}, 
-
-&nbsp; &nbsp; title={Mean Teacher-based Cross-Domain Activity Recognition using WiFi Signals}, 
-
-&nbsp; &nbsp; year={2023},
-
-&nbsp; &nbsp; doi={10.1109/JIOT.2023.3256324}
-
+@ARTICLE{WiTeacher2023,  
+&nbsp; &nbsp; author={Xiao, Chunjing and Lei, Yue and Liu, Chun and Wu, Jie},  
+&nbsp; &nbsp; journal={IEEE Internet of Things Journal},   
+&nbsp; &nbsp; title={Mean Teacher-based Cross-Domain Activity Recognition using WiFi Signals},   
+&nbsp; &nbsp; year={2023},  
+&nbsp; &nbsp; doi={10.1109/JIOT.2023.3256324}  
 }
 
 # Dataset
