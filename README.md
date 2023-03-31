@@ -1,6 +1,6 @@
 # WiTeacher
 
-These are the code and data for the paper: [Mean Teacher-based Cross-Domain Activity Recognition using WiFi Signals](https://github.com/ChunjingXiao/WiTeacher/blob/master/MeanTeacher_WiTeacher_IoTJ.pdf), IEEE Internet of Things Journal, 2023. https://ieeexplore.ieee.org/document/10066505
+These are the introduction of the paper: [Mean Teacher-based Cross-Domain Activity Recognition using WiFi Signals](https://github.com/ChunjingXiao/WiTeacher/blob/master/MeanTeacher_WiTeacher_IoTJ.pdf), IEEE Internet of Things Journal, 2023. https://ieeexplore.ieee.org/document/10066505
 
 WiTeacher aims at recognizing activities for cross-domain scenarios using WiFi Channel State Information (CSI).
 
@@ -42,27 +42,6 @@ Also the raw CSI data we collected can be downloaded via Baidu or Google: Data_R
 ## SignFi Dataset
 
 The SignFi dataset comes from the link below: https://github.com/yongsen/SignFi
-
-
-# Requirement
-
-Python 3.7
-
-Pytorch 1.8.1
-
-The codes are tested under window7.
-
-
-# Folder descriptions:
-
-*01Data_PreProcess*: This is used to extract the data in CSI format from the original WiFi and convert it into PNG format in order to make better use of the data.
-
-
-*02Training_Generator*: This is used to train two generators which proposed in the paper to  generate the source-like and target-like data which using StyleGAN offlin.
-
-
-*03Activity_Recognition*: Based on the semi-supervised framework: Mean Teacher, the label smoothing-based classification loss and the sample relation-based consistency
-regularization are added to significantly improve the performance of activity recognition.
 
 
 
