@@ -4,6 +4,8 @@ These are the introduction of the paper: [Mean Teacher-based Cross-Domain Activi
 
 WiTeacher aims at recognizing activities for cross-domain scenarios using WiFi Channel State Information (CSI).
 
+The code of WiTeacehr is still being sorted out.
+
 # Citation
 @ARTICLE{WiTeacher2023,  
 &nbsp; &nbsp; author={Xiao, Chunjing and Lei, Yue and Liu, Chun and Wu, Jie},  
