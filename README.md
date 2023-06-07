@@ -1,6 +1,6 @@
 # WiTeacher
 
-These are the introduction of the paper: [Mean Teacher-based Cross-Domain Activity Recognition using WiFi Signals](https://github.com/ChunjingXiao/WiTeacher/blob/master/MeanTeacher_WiTeacher_IoTJ.pdf), IEEE Internet of Things Journal, 2023. https://ieeexplore.ieee.org/document/10066505. The code of WiTeacehr is still being sorted out.
+These are the introduction of the paper: [Mean Teacher-based Cross-Domain Activity Recognition using WiFi Signals](https://github.com/ChunjingXiao/WiTeacher/blob/master/MeanTeacher_WiTeacher_IoTJ.pdf), IEEE Internet of Things Journal, 2023. https://ieeexplore.ieee.org/document/10066505. 
 
 WiTeacher aims at recognizing activities for cross-domain scenarios using WiFi Channel State Information (CSI).
 
