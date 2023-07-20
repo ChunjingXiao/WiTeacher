@@ -10,7 +10,10 @@ WiTeacher aims at recognizing activities for cross-domain scenarios using WiFi C
 &nbsp; &nbsp; author={Xiao, Chunjing and Lei, Yue and Liu, Chun and Wu, Jie},  
 &nbsp; &nbsp; journal={IEEE Internet of Things Journal},   
 &nbsp; &nbsp; title={Mean Teacher-based Cross-Domain Activity Recognition using WiFi Signals},   
-&nbsp; &nbsp; year={2023},  
+&nbsp; &nbsp; year={2023}, 
+&nbsp; &nbsp; volume={10},
+&nbsp; &nbsp; number={14},
+&nbsp; &nbsp; pages={12787-12797},
 &nbsp; &nbsp; doi={10.1109/JIOT.2023.3256324}  
 }
 
